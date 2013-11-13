@@ -1,7 +1,7 @@
 ﻿Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        lblFontCode.Font = New Font("", 12, FontStyle.Regular)
     End Sub
 
     Private Sub btnGenerateCode_Click(sender As Object, e As EventArgs) Handles btnGenerateCode.Click
@@ -37,7 +37,8 @@
 
     Private Sub CopyStringToClipboard()
         Clipboard.SetText(lblFontCode.Text, TextDataFormat.Text)
-        lblIMBCode.Text = "Copied to clipboard"
+        lblIMBCode.Text = lblFontCode.Text
+        lblClipboardStatus.Text = "Copied to clipboard"
     End Sub
 
 End Class

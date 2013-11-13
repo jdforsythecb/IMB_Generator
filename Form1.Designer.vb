@@ -38,6 +38,7 @@ Partial Class Form1
         Me.txtSerialNo = New System.Windows.Forms.TextBox()
         Me.lblZip2 = New System.Windows.Forms.Label()
         Me.lblIMBCode = New System.Windows.Forms.Label()
+        Me.lblClipboardStatus = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'txtZip
@@ -159,17 +160,28 @@ Partial Class Form1
         'lblIMBCode
         '
         Me.lblIMBCode.AutoSize = True
-        Me.lblIMBCode.Location = New System.Drawing.Point(133, 286)
+        Me.lblIMBCode.Font = New System.Drawing.Font("USPSIMBStandard", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblIMBCode.Location = New System.Drawing.Point(132, 281)
         Me.lblIMBCode.Name = "lblIMBCode"
-        Me.lblIMBCode.Size = New System.Drawing.Size(103, 13)
+        Me.lblIMBCode.Size = New System.Drawing.Size(191, 24)
         Me.lblIMBCode.TabIndex = 15
         Me.lblIMBCode.Text = "(no code generated)"
+        '
+        'lblClipboardStatus
+        '
+        Me.lblClipboardStatus.AutoSize = True
+        Me.lblClipboardStatus.Location = New System.Drawing.Point(20, 313)
+        Me.lblClipboardStatus.Name = "lblClipboardStatus"
+        Me.lblClipboardStatus.Size = New System.Drawing.Size(103, 13)
+        Me.lblClipboardStatus.TabIndex = 16
+        Me.lblClipboardStatus.Text = "(no code generated)"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(504, 316)
+        Me.ClientSize = New System.Drawing.Size(544, 340)
+        Me.Controls.Add(Me.lblClipboardStatus)
         Me.Controls.Add(Me.lblIMBCode)
         Me.Controls.Add(Me.lblZip2)
         Me.Controls.Add(Me.txtSerialNo)
@@ -207,5 +219,6 @@ Partial Class Form1
     Friend WithEvents txtSerialNo As System.Windows.Forms.TextBox
     Friend WithEvents lblZip2 As System.Windows.Forms.Label
     Friend WithEvents lblIMBCode As System.Windows.Forms.Label
+    Friend WithEvents lblClipboardStatus As System.Windows.Forms.Label
 
 End Class
