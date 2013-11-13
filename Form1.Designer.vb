@@ -39,6 +39,8 @@ Partial Class Form1
         Me.lblZip2 = New System.Windows.Forms.Label()
         Me.lblIMBCode = New System.Windows.Forms.Label()
         Me.lblClipboardStatus = New System.Windows.Forms.Label()
+        Me.txtDecode = New System.Windows.Forms.TextBox()
+        Me.btnDecode = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtZip
@@ -46,14 +48,14 @@ Partial Class Form1
         Me.txtZip.Location = New System.Drawing.Point(174, 142)
         Me.txtZip.Name = "txtZip"
         Me.txtZip.Size = New System.Drawing.Size(113, 20)
-        Me.txtZip.TabIndex = 5
+        Me.txtZip.TabIndex = 1
         '
         'btnGenerateCode
         '
         Me.btnGenerateCode.Location = New System.Drawing.Point(13, 185)
         Me.btnGenerateCode.Name = "btnGenerateCode"
         Me.btnGenerateCode.Size = New System.Drawing.Size(113, 23)
-        Me.btnGenerateCode.TabIndex = 6
+        Me.btnGenerateCode.TabIndex = 2
         Me.btnGenerateCode.Text = "Generate IMB Code"
         Me.btnGenerateCode.UseVisualStyleBackColor = True
         '
@@ -80,7 +82,7 @@ Partial Class Form1
         Me.btnClipboard.Location = New System.Drawing.Point(16, 277)
         Me.btnClipboard.Name = "btnClipboard"
         Me.btnClipboard.Size = New System.Drawing.Size(110, 23)
-        Me.btnClipboard.TabIndex = 7
+        Me.btnClipboard.TabIndex = 3
         Me.btnClipboard.Text = "Copy to Clipboard"
         Me.btnClipboard.UseVisualStyleBackColor = True
         '
@@ -95,10 +97,12 @@ Partial Class Form1
         '
         'txtBarcodeID
         '
+        Me.txtBarcodeID.Enabled = False
         Me.txtBarcodeID.Location = New System.Drawing.Point(174, 6)
         Me.txtBarcodeID.Name = "txtBarcodeID"
         Me.txtBarcodeID.Size = New System.Drawing.Size(113, 20)
-        Me.txtBarcodeID.TabIndex = 1
+        Me.txtBarcodeID.TabIndex = 6
+        Me.txtBarcodeID.Text = "00"
         '
         'lblServiceID
         '
@@ -111,10 +115,12 @@ Partial Class Form1
         '
         'txtServiceID
         '
+        Me.txtServiceID.Enabled = False
         Me.txtServiceID.Location = New System.Drawing.Point(174, 37)
         Me.txtServiceID.Name = "txtServiceID"
         Me.txtServiceID.Size = New System.Drawing.Size(113, 20)
-        Me.txtServiceID.TabIndex = 2
+        Me.txtServiceID.TabIndex = 7
+        Me.txtServiceID.Text = "708"
         '
         'lblMailerID
         '
@@ -127,10 +133,12 @@ Partial Class Form1
         '
         'txtMailerID
         '
+        Me.txtMailerID.Enabled = False
         Me.txtMailerID.Location = New System.Drawing.Point(174, 70)
         Me.txtMailerID.Name = "txtMailerID"
         Me.txtMailerID.Size = New System.Drawing.Size(113, 20)
-        Me.txtMailerID.TabIndex = 3
+        Me.txtMailerID.TabIndex = 8
+        Me.txtMailerID.Text = "000000"
         '
         'lblSerialNo
         '
@@ -143,10 +151,12 @@ Partial Class Form1
         '
         'txtSerialNo
         '
+        Me.txtSerialNo.Enabled = False
         Me.txtSerialNo.Location = New System.Drawing.Point(174, 100)
         Me.txtSerialNo.Name = "txtSerialNo"
         Me.txtSerialNo.Size = New System.Drawing.Size(113, 20)
-        Me.txtSerialNo.TabIndex = 4
+        Me.txtSerialNo.TabIndex = 9
+        Me.txtSerialNo.Text = "000000000"
         '
         'lblZip2
         '
@@ -160,7 +170,7 @@ Partial Class Form1
         'lblIMBCode
         '
         Me.lblIMBCode.AutoSize = True
-        Me.lblIMBCode.Font = New System.Drawing.Font("USPSIMBStandard", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblIMBCode.Font = New System.Drawing.Font("USPS4CB", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblIMBCode.Location = New System.Drawing.Point(132, 281)
         Me.lblIMBCode.Name = "lblIMBCode"
         Me.lblIMBCode.Size = New System.Drawing.Size(191, 24)
@@ -170,17 +180,36 @@ Partial Class Form1
         'lblClipboardStatus
         '
         Me.lblClipboardStatus.AutoSize = True
-        Me.lblClipboardStatus.Location = New System.Drawing.Point(20, 313)
+        Me.lblClipboardStatus.Location = New System.Drawing.Point(133, 318)
         Me.lblClipboardStatus.Name = "lblClipboardStatus"
         Me.lblClipboardStatus.Size = New System.Drawing.Size(103, 13)
         Me.lblClipboardStatus.TabIndex = 16
         Me.lblClipboardStatus.Text = "(no code generated)"
+        '
+        'txtDecode
+        '
+        Me.txtDecode.Location = New System.Drawing.Point(327, 6)
+        Me.txtDecode.Multiline = True
+        Me.txtDecode.Name = "txtDecode"
+        Me.txtDecode.Size = New System.Drawing.Size(205, 151)
+        Me.txtDecode.TabIndex = 4
+        '
+        'btnDecode
+        '
+        Me.btnDecode.Location = New System.Drawing.Point(327, 175)
+        Me.btnDecode.Name = "btnDecode"
+        Me.btnDecode.Size = New System.Drawing.Size(205, 23)
+        Me.btnDecode.TabIndex = 5
+        Me.btnDecode.Text = "Decode"
+        Me.btnDecode.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(544, 340)
+        Me.Controls.Add(Me.btnDecode)
+        Me.Controls.Add(Me.txtDecode)
         Me.Controls.Add(Me.lblClipboardStatus)
         Me.Controls.Add(Me.lblIMBCode)
         Me.Controls.Add(Me.lblZip2)
@@ -199,7 +228,7 @@ Partial Class Form1
         Me.Controls.Add(Me.txtZip)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form1"
-        Me.Text = "Generate USPS IMB Code"
+        Me.Text = "Generate Business Reply IMB Code"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -220,5 +249,7 @@ Partial Class Form1
     Friend WithEvents lblZip2 As System.Windows.Forms.Label
     Friend WithEvents lblIMBCode As System.Windows.Forms.Label
     Friend WithEvents lblClipboardStatus As System.Windows.Forms.Label
+    Friend WithEvents txtDecode As System.Windows.Forms.TextBox
+    Friend WithEvents btnDecode As System.Windows.Forms.Button
 
 End Class
